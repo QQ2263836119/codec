@@ -1,0 +1,31 @@
+A,Hello, this is a sample input file for testing the arithmetic coding compression program. 
+It contains multiple lines and various symbols, including both lowercase and uppercase letters, numbers, and punctuation marks.
+You can modify this text or use your own input file for testing.
+A,Hello, this is a sample input file for testing the arithmetic coding compression program. 
+It contains multiple lines and various symbols, including both lowercase and uppercase letters, numbers, and punctuation marks.
+You can modify this text or use your own input file for testing.
+A,Hello, this is a sample input file for testing the arithmetic coding compression program. 
+It contains multiple lines and various symbols, including both lowercase and uppercase letters, numbers, and punctuation marks.
+You can modify this text or use your own input file for testing.
+A,Hello, this is a sample input file for testing the arithmetic coding compression program. 
+It contains multiple lines and various symbols, including both lowercase and uppercase letters, numbers, and punctuation marks.
+You can modify this text or use your own input file for testing.
+A,Hello, this is a sample input file for testing the arithmetic coding compression program. 
+It contains multiple lines and various symbols, including both lowercase and uppercase letters, numbers, and punctuation marks.
+You can modify this text or use your own input file for testing.
+A,Hello, this is a sample input file for testing the arithmetic coding compression program. 
+It contains multiple lines and various symbols, including both lowercase and uppercase letters, numbers, and punctuation marks.
+You can modify this text or use your own input file for testing.
+A,Hello, this is a sample input file for testing the arithmetic coding compression program. 
+It contains multiple lines and various symbols, including both lowercase and uppercase letters, numbers, and punctuation marks.
+You can modify this text or use your own input file for testing.
+A,Hello, this is a sample input file for testing the arithmetic coding compression program. 
+It contains multiple lines and various symbols, including both lowercase and uppercase letters, numbers, and punctuation marks.
+You can modify this text or use your own input file for testing.
+A,Hello, this is a sample input file for testing the arithmetic coding compression program. 
+It contains multiple lines and various symbols, including both lowercase and uppercase letters, numbers, and punctuation marks.
+You can modify this text or use your own input file for testing.
+build\ArithmeticCompress.exe t.txt IO\enc.bin IO\dec.txt
+build\ArithmeticDecompress.exe input.txt IO\enc.bin IO\dec.txt
+build\test.exe input.txt IO\enc.bin IO\dec.txt
+2263838119
