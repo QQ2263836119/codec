@@ -1,0 +1,3 @@
+D:/Code/codec/build/CMakeFiles/test.dir
+D:/Code/codec/build/CMakeFiles/edit_cache.dir
+D:/Code/codec/build/CMakeFiles/rebuild_cache.dir
