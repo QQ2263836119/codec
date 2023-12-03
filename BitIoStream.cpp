@@ -14,7 +14,7 @@ int BitInputStream::read() {
 	if (currentByte == std::char_traits<char>::eof())
 		return -1;
 	if (numBitsRemaining == 0) {
-		currentByte = input.get();  // Note: istream.get() returns int, not char
+		currentByte = input.get();  
 		if (currentByte == std::char_traits<char>::eof())
 			return -1;
 		if (!(0 <= currentByte && currentByte <= 255))
@@ -37,7 +37,6 @@ int BitInputStream::readNoEof() {
 }
 
 
-
 BitOutputStream::BitOutputStream(uint8_t* _addr) :
 	currentByte(0),
 	numBitsFilled(0) ,
@@ -49,7 +48,6 @@ void BitOutputStream::write(int b) {
 	currentByte = (currentByte << 1) | b;
 	numBitsFilled++;
 	if (numBitsFilled == 8) {
-		// Note: ostream.put() takes char, which may be signed/unsigned
 		if (std::numeric_limits<char>::is_signed)
 			currentByte -= (currentByte >> 7) << 8;
 		data_addr[size++]=static_cast<uint8_t>(currentByte);
