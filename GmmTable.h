@@ -5,14 +5,6 @@
 #include<math.h>
 using namespace std;
 
-// 定义结构体
-typedef struct {
-    double* probs;
-    double* means;
-    double* stds;
-    int len;
-    uint32_t freqs_resolution;
-} Gmm;
 
 typedef double prob_t;
 typedef double mean_t;
@@ -24,8 +16,6 @@ typedef struct {
   std_t std1, std2, std3;
   uint32_t freqs_resolution;
 } gmm_t;
-
-Gmm initGmm(double* _probs, double* _means, double* _stds,int _len, uint32_t _freqs_resolution);
 
 class GmmTable{
 public:

@@ -16,11 +16,6 @@ uint16_t trans_addr [640];
 //模拟输出数据,由于是字符数组，0-255，故八位
 uint8_t data_addr[2400];
 
-//模拟GMM：权重，均值，方差，分辨率
-double probs[]={0.1,0.15,0.25,0.25,0.15,0.1};
-double means[]={0,10000,16384,32768,43690,65536};
-double stds[] ={5000,15000,20000,40000,15000,5000};
-uint32_t freqs_resolution = 1e9;
 // 上下界
 uint16_t low_bound=0;
 uint16_t high_bound=65535;
@@ -34,7 +29,11 @@ int main(int argc, char *argv[]) {
 
 
 	//初始化混合高斯模型
-	Gmm gmm =initGmm(probs,means,stds,6,freqs_resolution);
+	gmm_t* gmm;
+	gmm->prob1=0.3,gmm->prob2=0.4,gmm->prob3=0.3;
+	gmm->mean1=0,gmm->mean2=32000,gmm->mean3=65535;
+	gmm->std1=5000,gmm->std2=8000,gmm->std3=5000;
+	gmm->freqs_resolution=1e6;
 
 
     //*****编码******

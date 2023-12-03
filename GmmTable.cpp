@@ -2,25 +2,6 @@
 #include <iostream>
 #include <math.h>
 
-Gmm initGmm(double* _probs, double* _means, double* _stds,int _len, uint32_t _freqs_resolution) {
-    Gmm gmm;
-    gmm.probs = _probs;
-    gmm.means = _means;
-    gmm.stds = _stds;
-    gmm.freqs_resolution = _freqs_resolution;
-    gmm.len = _len;
-   
-    double prob_all=0.0;
-
-    for(int i=0;i<_len;i++)
-        prob_all+= exp(gmm.probs[i]);
-    
-    for(int i=0;i<_len;i++)
-        gmm.probs[i]/=prob_all;
-
-    return gmm;
-}
-
 
 double GmmTable::normal_cdf(double index, double mean, double std) {
     return 1.0 / 2 * (1 + erf((index - mean) / std / sqrt(2)));
