@@ -24,7 +24,7 @@ public:
     uint32_t low_bound=0,high_bound=65536;
 public:
     double normal_cdf(double index, double mean, double std);
-    GmmTable (gmm_t* gmm,uint32_t _low_bound=0,uint32_t _high_bound=65536);
+    GmmTable (gmm_t* gmm,uint32_t _low_bound=0,uint32_t _high_bound=65536,uint16_t exp_table[],uint32_t cdf_table[]);
     std::uint32_t getSymbolLimit() const;
 };
 
