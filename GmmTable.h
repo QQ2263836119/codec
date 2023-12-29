@@ -6,8 +6,12 @@
 using namespace std;
 
 
-typedef double prob_t;
-typedef double mean_t;
+// typedef double prob_t;
+// typedef double mean_t;
+// typedef mean_t std_t;
+
+typedef uint16_t prob_t;
+typedef uint16_t mean_t;
 typedef mean_t std_t;
 
 typedef struct {
@@ -24,7 +28,7 @@ public:
     uint32_t low_bound=0,high_bound=65536;
 public:
     double normal_cdf(double index, double mean, double std);
-    GmmTable (gmm_t* gmm,uint32_t _low_bound=0,uint32_t _high_bound=65536,uint16_t exp_table[],uint32_t cdf_table[]);
+    GmmTable (gmm_t* gmm,uint32_t _low_bound,uint32_t _high_bound,char exp_file_path[],char cdf_file_path[]);
     std::uint32_t getSymbolLimit() const;
 };
 

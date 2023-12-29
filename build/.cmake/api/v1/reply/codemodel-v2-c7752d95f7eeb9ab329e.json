@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Code/codec/build",
-		"source" : "D:/Code/codec"
+		"build" : "D:/code/codec/build",
+		"source" : "D:/code/codec"
 	},
 	"version" : 
 	{

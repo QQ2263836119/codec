@@ -52,10 +52,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Code\codec
+CMAKE_SOURCE_DIR = D:\code\codec
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Code\codec\build
+CMAKE_BINARY_DIR = D:\code\codec\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/test.dir/depend.make
@@ -69,60 +69,60 @@ include CMakeFiles/test.dir/progress.make
 include CMakeFiles/test.dir/flags.make
 
 CMakeFiles/test.dir/test.cpp.obj: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/test.cpp.obj: D:/Code/codec/test.cpp
+CMakeFiles/test.dir/test.cpp.obj: D:/code/codec/test.cpp
 CMakeFiles/test.dir/test.cpp.obj: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Code\codec\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test.dir/test.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/test.cpp.obj -MF CMakeFiles\test.dir\test.cpp.obj.d -o CMakeFiles\test.dir\test.cpp.obj -c D:\Code\codec\test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\code\codec\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test.dir/test.cpp.obj"
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/test.cpp.obj -MF CMakeFiles\test.dir\test.cpp.obj.d -o CMakeFiles\test.dir\test.cpp.obj -c D:\code\codec\test.cpp
 
 CMakeFiles/test.dir/test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/test.dir/test.cpp.i"
-	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Code\codec\test.cpp > CMakeFiles\test.dir\test.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\code\codec\test.cpp > CMakeFiles\test.dir\test.cpp.i
 
 CMakeFiles/test.dir/test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test.dir/test.cpp.s"
-	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Code\codec\test.cpp -o CMakeFiles\test.dir\test.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\code\codec\test.cpp -o CMakeFiles\test.dir\test.cpp.s
 
 CMakeFiles/test.dir/ArithmeticCoder.cpp.obj: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/ArithmeticCoder.cpp.obj: D:/Code/codec/ArithmeticCoder.cpp
+CMakeFiles/test.dir/ArithmeticCoder.cpp.obj: D:/code/codec/ArithmeticCoder.cpp
 CMakeFiles/test.dir/ArithmeticCoder.cpp.obj: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Code\codec\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/ArithmeticCoder.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/ArithmeticCoder.cpp.obj -MF CMakeFiles\test.dir\ArithmeticCoder.cpp.obj.d -o CMakeFiles\test.dir\ArithmeticCoder.cpp.obj -c D:\Code\codec\ArithmeticCoder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\code\codec\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/ArithmeticCoder.cpp.obj"
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/ArithmeticCoder.cpp.obj -MF CMakeFiles\test.dir\ArithmeticCoder.cpp.obj.d -o CMakeFiles\test.dir\ArithmeticCoder.cpp.obj -c D:\code\codec\ArithmeticCoder.cpp
 
 CMakeFiles/test.dir/ArithmeticCoder.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/test.dir/ArithmeticCoder.cpp.i"
-	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Code\codec\ArithmeticCoder.cpp > CMakeFiles\test.dir\ArithmeticCoder.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\code\codec\ArithmeticCoder.cpp > CMakeFiles\test.dir\ArithmeticCoder.cpp.i
 
 CMakeFiles/test.dir/ArithmeticCoder.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test.dir/ArithmeticCoder.cpp.s"
-	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Code\codec\ArithmeticCoder.cpp -o CMakeFiles\test.dir\ArithmeticCoder.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\code\codec\ArithmeticCoder.cpp -o CMakeFiles\test.dir\ArithmeticCoder.cpp.s
 
 CMakeFiles/test.dir/BitIoStream.cpp.obj: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/BitIoStream.cpp.obj: D:/Code/codec/BitIoStream.cpp
+CMakeFiles/test.dir/BitIoStream.cpp.obj: D:/code/codec/BitIoStream.cpp
 CMakeFiles/test.dir/BitIoStream.cpp.obj: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Code\codec\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/BitIoStream.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/BitIoStream.cpp.obj -MF CMakeFiles\test.dir\BitIoStream.cpp.obj.d -o CMakeFiles\test.dir\BitIoStream.cpp.obj -c D:\Code\codec\BitIoStream.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\code\codec\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/BitIoStream.cpp.obj"
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/BitIoStream.cpp.obj -MF CMakeFiles\test.dir\BitIoStream.cpp.obj.d -o CMakeFiles\test.dir\BitIoStream.cpp.obj -c D:\code\codec\BitIoStream.cpp
 
 CMakeFiles/test.dir/BitIoStream.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/test.dir/BitIoStream.cpp.i"
-	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Code\codec\BitIoStream.cpp > CMakeFiles\test.dir\BitIoStream.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\code\codec\BitIoStream.cpp > CMakeFiles\test.dir\BitIoStream.cpp.i
 
 CMakeFiles/test.dir/BitIoStream.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test.dir/BitIoStream.cpp.s"
-	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Code\codec\BitIoStream.cpp -o CMakeFiles\test.dir\BitIoStream.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\code\codec\BitIoStream.cpp -o CMakeFiles\test.dir\BitIoStream.cpp.s
 
 CMakeFiles/test.dir/GmmTable.cpp.obj: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/GmmTable.cpp.obj: D:/Code/codec/GmmTable.cpp
+CMakeFiles/test.dir/GmmTable.cpp.obj: D:/code/codec/GmmTable.cpp
 CMakeFiles/test.dir/GmmTable.cpp.obj: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Code\codec\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test.dir/GmmTable.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/GmmTable.cpp.obj -MF CMakeFiles\test.dir\GmmTable.cpp.obj.d -o CMakeFiles\test.dir\GmmTable.cpp.obj -c D:\Code\codec\GmmTable.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\code\codec\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test.dir/GmmTable.cpp.obj"
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/GmmTable.cpp.obj -MF CMakeFiles\test.dir\GmmTable.cpp.obj.d -o CMakeFiles\test.dir\GmmTable.cpp.obj -c D:\code\codec\GmmTable.cpp
 
 CMakeFiles/test.dir/GmmTable.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/test.dir/GmmTable.cpp.i"
-	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Code\codec\GmmTable.cpp > CMakeFiles\test.dir\GmmTable.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\code\codec\GmmTable.cpp > CMakeFiles\test.dir\GmmTable.cpp.i
 
 CMakeFiles/test.dir/GmmTable.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test.dir/GmmTable.cpp.s"
-	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Code\codec\GmmTable.cpp -o CMakeFiles\test.dir\GmmTable.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\code\codec\GmmTable.cpp -o CMakeFiles\test.dir\GmmTable.cpp.s
 
 # Object files for target test
 test_OBJECTS = \
@@ -142,7 +142,7 @@ test.exe: CMakeFiles/test.dir/build.make
 test.exe: CMakeFiles/test.dir/linkLibs.rsp
 test.exe: CMakeFiles/test.dir/objects1.rsp
 test.exe: CMakeFiles/test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Code\codec\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable test.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\code\codec\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable test.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\test.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -154,6 +154,6 @@ CMakeFiles/test.dir/clean:
 .PHONY : CMakeFiles/test.dir/clean
 
 CMakeFiles/test.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Code\codec D:\Code\codec D:\Code\codec\build D:\Code\codec\build D:\Code\codec\build\CMakeFiles\test.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\code\codec D:\code\codec D:\code\codec\build D:\code\codec\build D:\code\codec\build\CMakeFiles\test.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/test.dir/depend
 

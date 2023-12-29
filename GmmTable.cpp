@@ -2,9 +2,30 @@
 #include <iostream>
 #include <math.h>
 #include<algorithm>
+#include <fstream>
+#include <cstdint>
 
-double GmmTable::normal_cdf(double index, double mean, double std) {
-    return 1.0 / 2 * (1 + erf((index - mean) / std / sqrt(2)));
+
+bool readBinaryFile(char file_path[], void*& data, size_t& size) {
+    std::ifstream file(file_path, std::ios::binary);
+    if (!file.is_open()) {
+        std::cerr << "Error opening file: " << file_path << std::endl;
+        return false;
+    }
+
+    // 获取文件大小
+    file.seekg(0, std::ios::end);
+    size = file.tellg();
+    file.seekg(0, std::ios::beg);
+
+    // 分配内存
+    data = new char[size];
+
+    // 读取文件数据到数组
+    file.read(reinterpret_cast<char*>(data), size);
+    file.close();
+
+    return true;
 }
 
 
@@ -62,7 +83,17 @@ int cnt(int x,uint32_t cdf_table[],uint16_t probs[3],uint32_t prob_sum,uint16_t 
 
 
 
-GmmTable::GmmTable (gmm_t* gmm,uint32_t _low_bound,uint32_t _high_bound,uint16_t exp_table[],uint32_t cdf_table[]){
+GmmTable::GmmTable (gmm_t* gmm,uint32_t _low_bound,uint32_t _high_bound,char exp_file_path[],char cdf_file_path[]){
+    uint16_t* exp_table = nullptr;
+    size_t exp_size = 0;
+
+    uint32_t* cdf_table = nullptr;
+    size_t cdf_size = 0;
+
+    readBinaryFile(exp_file_path, reinterpret_cast<void*&>(exp_table), exp_size);
+    readBinaryFile(cdf_file_path, reinterpret_cast<void*&>(cdf_table), cdf_size);
+
+
     low_bound=_low_bound;
     high_bound=_high_bound;//左闭右闭
     uint32_t freqs_resolution = gmm->freqs_resolution; 
@@ -76,15 +107,18 @@ GmmTable::GmmTable (gmm_t* gmm,uint32_t _low_bound,uint32_t _high_bound,uint16_t
 
     uint32_t prob_sum= softmax(m_probs,exp_table);
 
-
     int n_gauss=3;
 
     for(int i=low_bound;i<=high_bound+1;i++){
         int dif=cnt(i,cdf_table,m_probs,prob_sum,m_means,m_stds,freqs_resolution);
         dif=max(dif,1);
+        symlow[i] = total_freqs;
         total_freqs+=dif;
         symhigh[i]=total_freqs;
     }
+
+    delete[] exp_table;
+    delete[] cdf_table;
 }
 
 uint32_t GmmTable::getSymbolLimit() const{

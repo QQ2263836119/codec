@@ -23,14 +23,16 @@ uint16_t high_bound=65535;
 int main(int argc, char *argv[]) {
 
 	// 写入生成数据。
-	cin>>low_bound>>high_bound;
+	// cin>>low_bound>>high_bound;
+	low_bound=50;
+	high_bound=500;
 	for (uint16_t i = 0; i < trans_len; i++) 
 		trans_addr[i] = 1*(high_bound-low_bound)*i/trans_len+low_bound;
 
 
 	//初始化混合高斯模型
 	gmm_t* gmm;
-	gmm->prob1=0.3,gmm->prob2=0.4,gmm->prob3=0.3;
+	gmm->prob1=50,gmm->prob2=55,gmm->prob3=60;
 	gmm->mean1=0,gmm->mean2=32000,gmm->mean3=65535;
 	gmm->std1=5000,gmm->std2=8000,gmm->std3=5000;
 	gmm->freqs_resolution=1e6;
