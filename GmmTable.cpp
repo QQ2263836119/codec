@@ -63,11 +63,13 @@ int cnt(int x,uint32_t cdf_table[],uint16_t probs[3],uint32_t prob_sum,uint16_t 
     __uint128_t cnt=0;
 
     for(int i=0;i<3;i++){
-        int idx_l=((-0.5+x)-means[i])*scale/stds[i];
+        // int idx_l=((-0.5+x)-means[i])*scale/stds[i];
+        int idx_l= (scale*(x-means[i])-(scale>>1)) /stds[i];
         idx_l =clamp(idx_l,-base,base);
         idx_l += base;
 
-        int idx_r=((0.5+x)-means[i])*scale/stds[i];
+        // int idx_r=((0.5+x)-means[i])*scale/stds[i];
+        int idx_r= (scale*(x-means[i])+(scale>>1)) /stds[i];
         idx_r =clamp(idx_r,-base,base);
         idx_r +=base;
         uint64_t tr=cdf_table[idx_r],tl=cdf_table[idx_l];
