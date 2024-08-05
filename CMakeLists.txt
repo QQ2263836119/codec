@@ -4,9 +4,8 @@ project(ArithmeticCoding)
 
 add_executable(test 
     test.cpp 
-    ArithmeticCoder.cpp 
-    BitIoStream.cpp 
-    GmmTable.cpp
+    arithmetic_coding.cpp 
+    coding.cpp 
 )
 
 

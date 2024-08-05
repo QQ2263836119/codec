@@ -6,10 +6,10 @@
       "type": "cppdbg",
       "request": "launch",
       "stopAtEntry": false,
-      "externalConsole": true,
+      "externalConsole": false,
       "cwd": "${workspaceFolder}",
       "program": "${workspaceFolder}/build/test.exe",
-      "args": ["t.txt","IO/enc.bin","IO/dec.txt"],
+      "args": [],
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

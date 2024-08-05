@@ -1,51 +1,133 @@
-#include <cstdint>
-#include <cstdlib>
-#include <fstream>
-#include <iostream>
-#include <stdexcept>
-#include <string>
-#include <vector>
-#include "ArithmeticCoder.hpp"
-#include "BitIoStream.hpp"
-#include "GmmTable.h"
-#include <stddef.h> 
-
-// 模拟输入数据,数值0-65535
-size_t trans_len = 640;
-uint16_t trans_addr [640];	
-//模拟输出数据,由于是字符数组，0-255，故八位
-uint8_t data_addr[2400];
-
-// 上下界
-uint16_t low_bound=0;
-uint16_t high_bound=65535;
-
-int main(int argc, char *argv[]) {
-
-	// 写入生成数据。
-	// cin>>low_bound>>high_bound;
-	low_bound=50;
-	high_bound=500;
-	for (uint16_t i = 0; i < trans_len; i++) 
-		trans_addr[i] = 1*(high_bound-low_bound)*i/trans_len+low_bound;
+#include"coding.h"
+using namespace std;
 
 
-	//初始化混合高斯模型
-	gmm_t* gmm;
-	gmm->prob1=50,gmm->prob2=55,gmm->prob3=60;
-	gmm->mean1=0,gmm->mean2=32000,gmm->mean3=65535;
-	gmm->std1=5000,gmm->std2=8000,gmm->std3=5000;
-	gmm->freqs_resolution=1e6;
+
+char inputs[13][255] = {
+  "D:/Code/codec/input/encode_data_LL.txt",
+  "D:/Code/codec/input/encode_data_HL_3.txt",
+  "D:/Code/codec/input/encode_data_LH_3.txt",
+  "D:/Code/codec/input/encode_data_HH_3.txt",
+  "D:/Code/codec/input/encode_data_HL_2.txt",
+  "D:/Code/codec/input/encode_data_LH_2.txt",
+  "D:/Code/codec/input/encode_data_HH_2.txt",
+  "D:/Code/codec/input/encode_data_HL_1.txt",
+  "D:/Code/codec/input/encode_data_LH_1.txt",
+  "D:/Code/codec/input/encode_data_HH_1.txt",
+  "D:/Code/codec/input/encode_data_HL_0.txt",
+  "D:/Code/codec/input/encode_data_LH_0.txt",
+  "D:/Code/codec/input/encode_data_HH_0.txt"
+};
 
 
-    //*****编码******
-    // 编码结果顺便写入"IO\enc.bin",实际是不会写入的
-    size_t len=coding(gmm,trans_addr,trans_len,data_addr,low_bound,high_bound);
 
-	char *binFile  = argv[2];
-	char *decFile = argv[3];
-    //*****解码******
-	bool ans=decoding(gmm,low_bound,high_bound,binFile,decFile);
+char gmmfiles[13][255] ={
+  "D:/Code/codec/GMM/LL.txt",
+  "D:/Code/codec/GMM/HL_3.txt",
+  "D:/Code/codec/GMM/LH_3.txt",
+  "D:/Code/codec/GMM/HH_3.txt",
+  "D:/Code/codec/GMM/HL_2.txt",
+  "D:/Code/codec/GMM/LH_2.txt",
+  "D:/Code/codec/GMM/HH_2.txt",
+  "D:/Code/codec/GMM/HL_1.txt",
+  "D:/Code/codec/GMM/LH_1.txt",
+  "D:/Code/codec/GMM/HH_1.txt",
+  "D:/Code/codec/GMM/HL_0.txt",
+  "D:/Code/codec/GMM/LH_0.txt",
+  "D:/Code/codec/GMM/HH_0.txt"
+};
+void test(int gmm_scale){
+    int16_t* datas[13];
+    size_t lens[13];
+    gmm_t* gmms[13];
+    int maxs[13], mins[13];
+    for(int i=0;i<13;i++){
+        read_txt(inputs[i],datas[i],lens[i],maxs[i],mins[i]);
+        gmms[i]=read_gmmt(gmmfiles[i],lens[i],gmm_scale);
+    }
 
-	return 0;
+    clock_t start_time, end_time;
+    float elapsed_time;
+
+    start_time = clock();
+    CodingResult enc_res = codings(gmms, datas, lens, gmm_scale);
+    end_time = clock();
+
+    elapsed_time = (float)(end_time - start_time) / CLOCKS_PER_SEC;
+    printf("    coding time: %.3f s\n", elapsed_time);
+
+    char binfile[255];
+    sprintf(binfile, "D:/Code/codec/bin/gmm_sacle_%d.bin", gmm_scale);
+    write_bin(enc_res.data, enc_res.length, binfile);
+	float bpp = 8.0*enc_res.length/(3840*2160);
+	printf("	bin_len: %ld\n", enc_res.length);
+	printf("	BPP: %f\n", bpp);
+
+    start_time = clock();
+    DecodingResult dec_res = decoings(gmms, binfile, lens,gmm_scale);
+    end_time = clock();
+    elapsed_time = (float)(end_time - start_time) / CLOCKS_PER_SEC;
+    printf("    decoding time: %.3f s\n", elapsed_time);
+
+	int success_cnt=0;
+    for(int i=0;i<13;i++){
+        int16_t* enc_xs= datas[i];
+        int16_t* dec_xs= dec_res.data[i];
+        size_t len = lens[i];
+        if(memcmp(enc_xs,dec_xs,len*sizeof(int16_t))==0) success_cnt++;
+    }
+	printf("    success_cnt: %d/%d\n", success_cnt, 13);
+
+
+    for(int i=0;i<13;i++){
+        free(datas[i]);
+        free(gmms[i]);
+		free(dec_res.data[i]);
+    }
 }
+
+void test_f(){
+    int16_t* datas[13];
+    size_t lens[13];
+    gmm_f* gmms[13];
+    int maxs[13], mins[13];
+    for(int i=0;i<13;i++){
+        read_txt(inputs[i],datas[i],lens[i],maxs[i],mins[i]);
+        gmms[i]=read_gmmf(gmmfiles[i],lens[i]);
+    }
+
+    clock_t start_time, end_time;
+    float elapsed_time;
+
+    start_time = clock();
+    CodingResult enc_res = codings_f(gmms, datas, lens);
+    end_time = clock();
+
+    elapsed_time = (float)(end_time - start_time) / CLOCKS_PER_SEC;
+    printf("    coding time: %.3f s\n", elapsed_time);
+
+    char binfile[255];
+    sprintf(binfile, "D:/Code/codec/bin/gmm_sacle_float.bin");
+    write_bin(enc_res.data, enc_res.length, binfile);
+	float bpp = 8.0*enc_res.length/(3840*2160);
+	printf("    bin_len: %ld\n", enc_res.length);
+	printf("    bpp: %f\n", bpp);
+
+    for(int i=0;i<13;i++){
+        free(datas[i]);
+        free(gmms[i]);
+		// free(dec_res.data[i]);
+    }  
+}
+
+int main(int argc, char* argv[]){
+	printf("float\n");
+    test_f();
+	for(int scale=10;scale<=10000;scale*=10){
+		printf("scale: %d\n", scale);
+		test(scale);
+	}
+
+    return 0;
+}
+
